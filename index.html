@@ -1,0 +1,619 @@
+<!-- Welcome to my homepage bro :) This is my template and as you can see there is an header menu
+ for big screen devices like laptops and tablet but also i didnt forget about the mobile phones :)
+ there is  a second menu for mobile devices with hamburger menu icon. iam not really good at creating
+ understandeble function names so good luck reading it:) but iam pretty sure you can make your own
+ website in less then 15 minutes with my basic template you just need to change some colors and put 
+ texts whereever you want : ] . You can connect your other website pages to here with pages folder.
+ Thats all i wanna say i wish you a good day:) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Your text here</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('img/yourphoto.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+ .contentofthepage {
+            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+        .thebefore::before {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(170, 173, 173, 0.9);
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .thebefore::before h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #9ea5a4;
+        }
+        
+        .thebefore::before p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thesecondsection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .sectionbackground {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sectionbackground:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sectionbackground img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        
+        .thesectionscontent {
+            padding: 20px;
+        }
+        
+        .thesectionscontent h3 {
+            color: #9ea5a4;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .thesectionscontent p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        
+        .thesectionscontent .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #3a3850;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .thesectionscontent .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #9ea5a4;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .thebigtittle {
+            display: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .upmenubuttons {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        .button {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background: #03fbff;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .separator {
+            width: 2px;
+            height: 20px;
+            background: rgb(22, 0, 0);
+            align-self: center;
+        }
+
+        .theclock {
+            margin: 100px auto 0 auto;
+            font-size: 25px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        #timer {
+            font-size: 45px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            margin: 15px 0;
+        }
+
+        .theclock span {
+            display: block;
+            margin: 5px 0;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background-color: #9ea5a4;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .overlay {
+                flex-direction: row;
+                padding: 10px 15px;
+                justify-content: space-between;
+                align-items: center;
+                height: 70px;
+            }
+
+            .logo {
+                height: 56px;
+                margin-bottom: 0;
+                order: 2;
+                object-fit: contain;
+                max-width: 100%;
+                margin-right: 10px;
+            }
+
+            .thebigtittle {
+                display: block;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+                text-align: center;
+                order: 1;
+                flex: 1;
+                margin: 0 10px;
+                line-height: 1.2;
+                white-space: nowrap;
+            }
+
+            .upmenubuttons {
+                display: none;
+            }
+
+            .theclock {
+                margin-top: 150px;
+                font-size: 18px;
+                width: 80%;
+                padding: 20px 30px;
+            }
+
+            #timer {
+                font-size: 35px;
+            }
+
+            .buttonformobileoptionspage {
+                background-color: transparent;
+                color: white;
+                font-size: 32px;
+                padding: 5px 10px;
+                border: none;
+                cursor: pointer;
+                position: fixed;
+                left: 20px;
+                top: 15px;
+                z-index: 2001;
+                transition: all 0.3s ease;
+                border-radius: 5px;
+                order: 0;
+            }
+
+            .buttonformobileoptionspage:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.1);
+            }
+
+            .buttonformobileoptionspage:active {
+                transform: scale(0.95);
+            }
+
+            .buttonformobileoptionspage:focus {
+                outline: none;
+            }
+
+            .mobilephonemenu {
+                position: fixed;
+                top: 0;
+                left: -250px;
+                width: 250px;
+                height: 100%;
+                background-color: #9ea5a4;
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                padding-top: 50px;
+                z-index: 2000;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .mobilephonemenu.open {
+                left: 0;
+            }
+
+            .mobilephonemenu .button {
+                margin: 10px 0;
+                width: 100%;
+                padding: 15px;
+                font-size: 18px;
+                background: transparent;
+                color: white;
+                border: none;
+                text-align: left;
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .mobilephonemenu .button:before::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 0;
+                background: #03fbff;
+                transition: width 0.3s ease;
+                z-index: -1;
+            }
+
+            .mobilephonemenu .button:hover {
+                color: black;
+                padding-left: 25px;
+            }
+
+            .mobilephonemenu .button:hover:before::before {
+                width: 100%;
+            }
+
+            .important-title {
+                font-size: 28px;
+                padding: 15px;
+                margin-bottom: 25px;
+                width: 75%;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .thebigtittle {
+                font-size: 16px;
+            }
+            
+            .logo {
+                height: 50px;
+                margin-right: 5px;
+            }
+
+            .important-title {
+                font-size: 20px;
+                padding: 12px 20px;
+                width: 92%;
+            }
+
+            .theclock-text {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+        }
+
+        .theclock-containingpage {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .theclock-text {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                         -2px -2px 4px rgba(255, 255, 255, 0.1);
+            letter-spacing: 2px;
+            margin-top: 20px;
+            text-align: center;
+            position: relative;
+            animation: glow 2s ease-in-out infinite alternate,
+                       slideIn 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                            -2px -2px 4px rgba(255, 255, 255, 0.1);
+            }
+            to {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                            -2px -2px 4px rgba(255, 255, 255, 0.1),
+                            0 0 10px rgba(255, 255, 255, 0.5),
+                            0 0 20px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .theclock-item {
+            text-align: center;
+        }
+
+        .theclock-number {
+            font-size: 45px;
+            font-weight: bold;
+            color: #9ea5a4;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .theclock-number.sliding-down {
+            animation: slideDown 0.5s ease-out;
+        }
+
+        .theclock-label {
+            font-size: 16px;
+            color: #fff;
+            margin-top: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .important-title {
+            font-size: 36px;
+            font-weight: 900;
+            color: #9ea5a4;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            box-shadow: none;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .important-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            20% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <img src="img/yourlogo.png" alt="your logo" class="logo">
+        <div class="thebigtittle">your text here</div>
+        <div class="upmenubuttons">
+            <a href="pages/yourpage.html" class="button">your text here</a>
+            <a class='button' href='/pages/yourpage.html'>your text here</a>
+        </div>
+    </div>
+
+    <button class="buttonformobileoptionspage" onclick="togglemobilephonemenu()">&#9776;</button>
+
+    <div class="mobilephonemenu" id="mobilephonemenu">
+        <a href="pages/yourpage.html" class="button">your text here</a>
+        <a class='button' href='/pages/yourpage.html'>your text here</a>
+    </div>
+
+    <div class="theclock">
+        <div class="theclock-containingpage">
+            <div class="theclock-item">
+                <div class="theclock-number" id="days">00</div>
+                <div class="theclock-label">DAY</div>
+            </div>
+            <div class="theclock-item">
+                <div class="theclock-number" id="hours">00</div>
+                <div class="theclock-label">HOUR</div>
+            </div>
+            <div class="theclock-item">
+                <div class="theclock-number" id="minutes">00</div>
+                <div class="theclock-label">MINUTE</div>
+            </div>
+            <div class="theclock-item">
+                <div class="theclock-number" id="seconds">00</div>
+                <div class="theclock-label">SECOND</div>
+            </div>
+        </div>
+        <div class="theclock-text">LEFT</div>
+    </div>
+   <main class="contentofthepage">
+        <section class="thebefore::beforesection">
+            <h1>Your main text here</h1>
+        </section>
+        <section class="thebefore::beforesection">
+            <p> your second text here
+
+            </p>
+        </section>
+    </main></p>
+
+    <div class="footer">
+        <p>Copyrights © yourwebsite - All rights are reserved.</p>
+    </div>
+
+    <script>
+        const date = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+        };
+
+        function updatetheclock() {
+            const timestarting = Date.now();
+            const timeending = new Date('2026-04-24 10:30:00Z');
+            const duration = timeending.valueOf() - timestarting.valueOf();
+
+            if (duration <= 0) {
+                date.days = 0;
+                date.hours = 0;
+                date.minutes = 0;
+                date.seconds = 0;
+                changeclock();
+                return;
+            }
+
+            date.days = Math.floor(duration / (1000 * 60 * 60 * 24));
+            date.hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            date.minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+            date.seconds = Math.floor((duration % (1000 * 60)) / 1000);
+
+            changeclock();
+        }
+
+        function changeclock() {
+            const secondsElement = document.getElementById("seconds");
+            const oldSeconds = secondsElement.textContent;
+            const newSeconds = date.seconds.toString().padStart(2, '0');
+            
+            if (oldSeconds !== newSeconds) {
+                secondsElement.classList.add('sliding-up');
+                setTimeout(() => {
+                    secondsElement.textContent = newSeconds;
+                    secondsElement.classList.remove('sliding-up');
+                    secondsElement.classList.add('sliding-down');
+                    setTimeout(() => {
+                        secondsElement.classList.remove('sliding-down');
+                    }, 500);
+                }, 500);
+            }
+            document.getElementById("days").textContent = date.days.toString().padStart(2, '0');
+            document.getElementById("hours").textContent = date.hours.toString().padStart(2, '0');
+            document.getElementById("minutes").textContent = date.minutes.toString().padStart(2, '0');
+        }
+
+        setInterval(updatetheclock, 1000);
+        updatetheclock();
+
+        function togglemobilephonemenu() {
+            const mobilephonemenu = document.getElementById("mobilephonemenu");
+            mobilephonemenu.classList.toggle("open");
+            
+            const mobilephonemenuButtons = mobilephonemenu.getElementsByClassName("button");
+            for (let button of mobilephonemenuButtons) {
+                if (!mobilephonemenu.classList.contains("open")) {
+                    buttonevents = "none";
+                } else {
+                    buttonevents = "auto";
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobilephonemenu = document.getElementById("mobilephonemenu");
+            const mobilephonemenuButtons = mobilephonemenu.getElementsByClassName("button");
+            for (let button of mobilephonemenuButtons) {
+                buttonevents = "none";
+            }
+        });
+    </script>
+</body>
+</html>
